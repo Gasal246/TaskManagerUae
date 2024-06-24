@@ -1,33 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #ece3ca;
+    --foreground: #15191e;
+    --card: #dbca9a;
+    --card-foreground: #15191e;
+    --popover: #e4d8b4;
+    --popover-foreground: #15191e;
+    --primary: #ef9995;
+    --primary-foreground: #282425;
+    --secondary: #a4cbb4;
+    --secondary-foreground: #282425;
+    --muted: #dbca9a;
+    --muted-foreground: #282425;
+    --accent: #dc8850;
+    --accent-foreground: #15191e;
+    --destructive: #f35248;
+    --destructive-foreground: #15191e;
+    --border: #000000;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --base-100: #ece3ca;
+    --base-200: #e4d8b4;
+    --base-300: #dbca9a;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: #22262c;
+    --foreground: #eaeaea;
+    --card: #191e24;
+    --card-foreground: #eaeaea;
+    --popover: #191e24;
+    --popover-foreground: #eaeaea;
+    --primary: #7480ff;
+    --primary-foreground: #050617;
+    --secondary: #ff52d9;
+    --secondary-foreground: #190211;
+    --muted: #2a323c;
+    --muted-foreground: #a6adbb;
+    --accent: #00cdb8;
+    --accent-foreground: #15191e;
+    --destructive: #ff5861;
+    --destructive-foreground: #15191e;
+    --base-100: #2a323c;
+    --base-200: #191e24;
+    --base-300: #15191e;
+    --border: #a6adbb;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.custom-cursor {
+  cursor: url('/custom-cursor.png'), auto;
 }
